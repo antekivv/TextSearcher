@@ -58,6 +58,7 @@ void TextSearcherMulticore::FindImpl(const fs::directory_entry& file, const std:
     auto result = boost::algorithm::knuth_morris_pratt_search(str.begin(), str.end(), text);
 
     std::lock_guard<std::mutex> lock(mtx);
-    std::cout << file.path() << std::endl;
-    std::cout << "contain " <<  (result.first != result.second) << std::endl;
+
+    if (result.first != result.second)
+        std::cout << file.path() << std::endl;
 }
