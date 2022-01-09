@@ -1,0 +1,1 @@
+Use TextSearcher.exe directory_path
